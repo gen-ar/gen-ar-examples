@@ -2,7 +2,7 @@
   <head>
   	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>mindar-p5js-poster-global</title>
+		<title>p5js-poster-layer-multi-z</title>
 
     <!-- load A-Frame + MindAR + p5.js -->
     <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
@@ -42,6 +42,8 @@
   <body>
   	<!-- our existing canvas to load p5.js into -->
   	<canvas id="canvas-ar" style="display:none;"></canvas>
+  	<canvas id="canvas-ar2" style="display:none;"></canvas>
+  	<canvas id="canvas-ar3" style="display:none;"></canvas>
   	
   	<!-- MindAR + A-Frame tracking, use ?# to bypass cache during dev -->
   	<!-- create targets.mind file: https://hiukim.github.io/mind-ar-js-doc/tools/compile -->
@@ -50,7 +52,12 @@
       <a-entity id="example-target" mindar-image-target="targetIndex: 0">
       	
       	<!-- p5.js canvas as texture on plane, width + height ratio for F4/Weltformat poster -->
+      	<!-- position="x y z" » each layer z gets closer -->
         <a-plane width="1" height="1.4145" position="0 0 0" scale="1.05 1.05 1.05" rotation="0 0 0" material="src:#canvas-ar;transparent: true;" canvas-updater></a-plane>
+        
+        <a-plane width="1" height="1.4145" position="0 0 1" scale="1.05 1.05 1.05" rotation="0 0 0" material="src:#canvas-ar2;transparent: true;" canvas-updater></a-plane>
+        
+        <a-plane width="1" height="1.4145" position="0 0 2" scale="1.05 1.05 1.05" rotation="0 0 0" material="src:#canvas-ar3;transparent: true;" canvas-updater></a-plane>
       </a-entity>
     </a-scene>
 
