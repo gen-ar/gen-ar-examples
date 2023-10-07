@@ -1,3 +1,3 @@
-# gen-ar-examples
+# GEN-AR-Examples
 
-See .... for reference...
+🔗 See [GEN-AR documentation on examples](https://gen-ar.github.io/#examples) for details.
